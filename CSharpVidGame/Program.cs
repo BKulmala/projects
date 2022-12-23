@@ -7,10 +7,10 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             int chances = 3;
-            char[] wordTest = new char[] {'T','e','s','t'};
-            char[] underlineFill = new char[] {'_','_','_','_'};
+            char[] wordTest = new char[] {'T','e','s','t','s'};
+            char[] underlineFill = new char[] {'_','_','_','_','_'};
             char[] threeStrikes = new char[] {'O','O','O'};
-            while(!underlineFill.SequenceEqual(wordTest)) {
+            while(!underlineFill.SequenceEqual(wordTest) && chances != 0) {
             char letterGuess;
             Console.WriteLine("( |  _  | )\n");
             Console.WriteLine("     |     \n");
@@ -33,6 +33,10 @@ namespace HelloWorld
                 threeStrikes[chances] = 'X';
             }
             } 
+            if(chances == 0) {
+                Console.WriteLine("You didn't get it!\n");
+            }
+            else{Console.WriteLine("You got it!\n");}
         }
     }
 }
